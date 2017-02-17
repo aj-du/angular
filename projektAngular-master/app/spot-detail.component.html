@@ -1,0 +1,10 @@
+<div *ngIf="spot">
+    <h2>{{spot.name}} info!</h2>
+    <div>
+        <label>id: </label>{{spot.id}}</div>
+    <div>
+        <label>nazwa:  </label>
+        <input [(ngModel)]="spot.name" placeholder="nazwa" />
+    </div>
+    <button (click)="goBack()">Wstecz</button>
+</div>

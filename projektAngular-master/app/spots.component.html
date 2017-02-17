@@ -1,0 +1,19 @@
+<h2>Moje miejsca</h2>
+<ul class="spots">
+    <li *ngFor="let spot of spots" [class.selected]="spot === selectedSpot" (click)="onSelect(spot)">
+        <span class="badge">{{spot.id}}</span> {{spot.name}}
+    </li>
+</ul>
+<div *ngIf="selectedSpot">
+    <h2>
+        {{selectedSpot.name | uppercase}} to moje wybrane miejsce
+    </h2>
+    <button (click)="gotoDetail()">Szczegóły</button>
+</div>
+<h2>Basic Request</h2>
+<button type="button" (click)="makeRequestFromService()">Get</button>
+<div *ngIf="loading">loading...</div>
+<pre>{{data | json}}</pre>
+<button type="button" (click)="makePost()">Post</button>
+<div *ngIf="loading">loading...</div>
+<pre>{{dataPost | json}}</pre>
